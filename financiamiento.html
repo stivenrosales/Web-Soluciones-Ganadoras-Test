@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financiamiento - Soluciones Ganadoras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logoSolucionGanadora.jpg" alt="Soluciones Ganadoras Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="financiamiento.html" class="active-link">Financiamiento</a></li>
+                <li><a href="inversiones.html">Inversiones</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Banner con Formulario -->
+    <section class="financing-hero">
+        <div class="container financing-hero-grid">
+            <div class="financing-hero-content">
+                <h1>Préstamo con garantía hipotecaria</h1>
+                <h3>Financiamiento para impulsar tu negocio.</h3>
+                <ul class="financing-checklist">
+                    <li><span class="check-icon">✓</span> Precalifica sin compromiso</li>
+                    <li><span class="check-icon">✓</span> Web 100% segura</li>
+                    <li><span class="check-icon">✓</span> Tasas competitivas</li>
+                </ul>
+            </div>
+            <div class="financing-form-card">
+                <h3 class="form-title">Solicítalo aquí</h3>
+                <p class="form-subtitle">Obtén tu préstamo rápido y seguro.</p>
+
+                <div class="currency-toggle">
+                    <button class="currency-btn active" data-currency="PEN">Soles</button>
+                    <button class="currency-btn" data-currency="USD">Dólares</button>
+                </div>
+
+                <div class="amount-input-wrapper">
+                    <span class="currency-symbol">S/</span>
+                    <input type="text" id="loanAmount" placeholder="Ingresa monto" class="amount-input" value="15,000">
+                    <span class="currency-code">PEN</span>
+                </div>
+
+                <div class="validation-message"
+                    style="color: #dc3545; font-size: 0.85rem; margin-top: 5px; height: 1.2em; display: none;"></div>
+
+                <div class="amount-range">
+                    <div class="range-label">Mínimo S/15 mil</div>
+                    <hr class="range-divider">
+                    <div class="range-label">Máximo S/2 millones</div>
+                </div>
+
+                <label class="tcea-label">Tasa de interés mensual desde <b>0.84%</b></label>
+
+                <a href="precalificacion.html" class="btn btn-primary full-width btn-lg"
+                    style="text-decoration: none;">Precalifica ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Ribbon -->
+    <section class="stats-ribbon">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <div class="stat-text">
+                    <h3>+S/ 1600 millones</h3>
+                    <p>en financiamiento otorgado</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <div class="stat-text">
+                    <h3>+6500</h3>
+                    <p>empresarios financiados</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-trophy"></i>
+                <div class="stat-text">
+                    <h3>8 años</h3>
+                    <p>de operaciones</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-shield-alt"></i>
+                <div class="stat-text">
+                    <h3>UIF</h3>
+                    <p>Supervisados en prevención de LA/FT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Préstamo -->
+    <section class="loan-types-section">
+        <div class="container">
+            <h2 class="section-title">¿Qué tipo de préstamo necesitas?</h2>
+
+            <div class="loan-types-grid">
+                <div class="loan-type-card">
+                    <div class="loan-type-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Capital de trabajo</h3>
+                    <p>Capital de trabajo rápido y seguro para impulsar tus proyectos.</p>
+                    <a href="#" class="loan-link">Lo quiero <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="loan-type-card">
+                    <div class="loan-type-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construcción</h3>
+                    <p>Culmina el proyecto de tu casa soñada de manera fácil.</p>
+                    <a href="#" class="loan-link">Lo quiero <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="loan-type-card">
+                    <div class="loan-type-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3>Consolidar deudas</h3>
+                    <p>Unifica y controla tus deudas de manera rápida y segura.</p>
+                    <a href="#" class="loan-link">Lo quiero <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="loan-type-card">
+                    <div class="loan-type-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Traslado de deuda</h3>
+                    <p>Ahorra en tu deuda pendiente con una tasa más atractiva.</p>
+                    <a href="#" class="loan-link">Lo quiero <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="loan-type-card">
+                    <div class="loan-type-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Estoy en infocorp</h3>
+                    <p>Solicita un préstamo sin que tu reporte en la central de riesgo sea un impedimento.</p>
+                    <a href="#" class="loan-link">Lo quiero <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="loan-type-card">
+                    <div class="loan-type-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Libre disponibilidad</h3>
+                    <p>Cumple los proyectos que tienes en mente de manera rápida y segura.</p>
+                    <a href="#" class="loan-link">Lo quiero <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pasos para obtener préstamo -->
+    <section class="steps-section">
+        <div class="container">
+            <h2>Pasos para obtener tu préstamo con garantía hipotecaria</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Contacto</h3>
+                    <p>Luego de precalificar en línea, te llamaremos para validar los datos y resolver tus dudas.</p>
+                    <div class="step-icon-bottom">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Documentación</h3>
+                    <p>Concretamos una reunión contigo para verificar la documentación requerida y realizar la tasación
+                        del inmueble.</p>
+                    <div class="step-icon-bottom">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Desembolso</h3>
+                    <p>En un promedio de 15 días útiles después de la entrega de todos los documentos, firmas el
+                        contrato y recibes tu préstamo.</p>
+                    <div class="step-icon-bottom">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios y Requisitos -->
+    <section class="benefits-requirements-section">
+        <div class="container">
+            <h2 class="section-title">Beneficios de tu préstamo con garantía hipotecaria</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon-box">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>TCEA desde 16.83%</h3>
+                    <p>Te ofrecemos una tasa competitiva y personalizada en función de tu evaluación.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="icon-box">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Desembolso rápido</h3>
+                    <p>En promedio 15 días útiles desde la entrega de los documentos.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="icon-box">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Plazo de pago</h3>
+                    <p>Puedes cancelar tu préstamo hasta en 6 años.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="icon-box">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Asesoría personalizada</h3>
+                    <p>Contarás con un asesor personal durante todo el proceso.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="icon-box">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Cronogramas a medida</h3>
+                    <p>Puedes elegir cómo deseas amortizar el capital durante el periodo del préstamo.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="icon-box">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Monto máximo</h3>
+                    <p>Podemos prestarte hasta el 40% del valor del inmueble en función de la tasación.</p>
+                </div>
+            </div>
+
+            <!-- Requisitos -->
+            <div class="requirements-box">
+                <h3>Requisitos</h3>
+                <div class="requirements-grid">
+                    <div class="requirement-column">
+                        <h4><i class="fas fa-home"></i> De la propiedad</h4>
+                        <ul>
+                            <li>Copia literal actualizada</li>
+                            <li>Hoja resumen (HR) y Predio Urbano (PU)</li>
+                            <li>Copia DNI de los dueños de la propiedad</li>
+                            <li>Copia de recibo de luz o agua</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-column">
+                        <h4><i class="fas fa-user"></i> Del solicitante</h4>
+                        <ul>
+                            <li>Copia DNI del solicitante</li>
+                            <li>Sustento de ingresos de los 3 últimos meses</li>
+                            <li>Copia de recibo de luz o agua de su vivienda actual</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="requirement-note">
+                    Contar con un inmueble inscrito en SUNARP a nombre de una persona natural en la zona metropolitana
+                    de Lima, Callao, Arequipa, Trujillo, Huancayo, Piura, Chiclayo, Chimbote y otras ciudades
+                    principales.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="text-center">¿Tienes preguntas?</h2>
+            <p class="text-center hero-subtitle">Encuentra respuesta a tus consultas</p>
+
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>¿Cuáles son los requisitos para obtener un préstamo?</summary>
+                    <p>Contar con una propiedad inmobiliaria ubicada en zonas urbanas principales, debidamente inscrita
+                        en la SUNARP, a nombre de una o varias personas naturales. La propiedad debe estar libre de
+                        multas, gravámenes o afectaciones. El monto mínimo de un préstamo es de S/ 15 mil soles.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué tipo de garantía aceptan?</summary>
+                    <p>Aceptamos únicamente garantías inmobiliarias, como casas, departamentos, locales, oficinas,
+                        edificios y terrenos inscritas en Registros Públicos (SUNARP). No se acepta ningún otro tipo de
+                        garantía.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Estoy reportado en Infocorp, ¿puedo acceder a un préstamo?</summary>
+                    <p>No es necesariamente un impedimento. Evaluaremos el nivel de la deuda reportada en Infocorp, el
+                        cumplimiento de pago y el valor del inmueble ofrecido en garantía para determinar si calificas a
+                        un préstamo.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cuánto es el costo aproximado de los trámites?</summary>
+                    <p>Con nosotros no tendrás que preocuparte por el costo de los trámites, ya que estos son
+                        financiados con el préstamo. Los gastos del proceso, tanto administrativos, notariales y
+                        registrales, están incluidos en la tasa de costo efectiva anual (TCEA).</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content nav-container">
+            <p>&copy; 2024 Soluciones Ganadoras S.A.C. Todos los derechos reservados.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/51999999999" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-pulse"></div>
+    </a>
+
+    <script src="financing.js"></script>
+
+</body>
+
+</html>

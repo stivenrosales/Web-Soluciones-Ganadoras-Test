@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precalificación - Soluciones Ganadoras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navegación Simple -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logoSolucionGanadora.jpg" alt="Soluciones Ganadoras Logo">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario de Precalificación -->
+    <section class="prequalification-section">
+        <div class="container">
+            <div class="prequalification-layout">
+
+                <!-- Sidebar con información -->
+                <aside class="prequalification-sidebar">
+                    <div class="sidebar-card">
+                        <div class="sidebar-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>¿En qué paso estoy?</h3>
+                        <p>Soluciones Ganadoras es una empresa con inscripción en el Registro de Empresas de Préstamos
+                            (RES. SBS
+                            05939-2019)</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <div class="sidebar-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>¡Completa tus datos para saber si precalificas a un préstamo!</h3>
+                        <p>Si cumples con los requisitos nos pondremos en contacto contigo.</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <div class="sidebar-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Requisitos para solicitar un préstamo</h3>
+                        <p>Tener un inmueble inscrito en SUNARP a nombre de una persona natural en las zonas
+                            disponibles.</p>
+
+                        <!-- Pestañas de requisitos -->
+                        <div class="requirements-tabs">
+                            <div class="tabs-header">
+                                <button class="tab-btn active" data-tab="propiedad">Propiedad</button>
+                                <button class="tab-btn" data-tab="solicitante">Solicitante</button>
+                            </div>
+
+                            <div class="tabs-content">
+                                <!-- Tab Propiedad -->
+                                <div class="tab-panel active" id="tab-propiedad">
+                                    <div class="check-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Copia HR del solicitante</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Copia literal de la propiedad (menos a 7 meses)</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Copia de recibo de luz o agua de la vivienda actual</span>
+                                    </div>
+                                </div>
+
+                                <!-- Tab Solicitante -->
+                                <div class="tab-panel" id="tab-solicitante">
+                                    <div class="check-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Copia literal</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Hoja Resumen (HR) y Predio Urbano (PU)</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Copia DNI de los dueños de la propiedad</span>
+                                    </div>
+                                    <div class="check-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Copia de recibo de luz o agua</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Formulario Principal -->
+                <div class="prequalification-form-container">
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-text">Paso 1 de 2</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Título del Paso -->
+                    <h2 class="form-step-title" id="stepTitle">Completa tus datos para empezar tu precalificación</h2>
+
+                    <!-- Formulario Multi-Paso -->
+                    <form id="prequalificationForm" class="multistep-form">
+
+                        <!-- PASO 1: Datos Personales -->
+                        <div class="form-step active" data-step="1">
+                            <div class="form-group">
+                                <label for="dni">DNI</label>
+                                <input type="text" id="dni" name="dni" placeholder="Ingresa tu DNI" maxlength="8"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Teléfono de contacto</label>
+                                <input type="tel" id="phone" name="phone" placeholder="999 999 999" maxlength="9"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="optionalPhone">Otro teléfono de contacto (opcional)</label>
+                                <input type="tel" id="optionalPhone" name="optionalPhone" placeholder="999 999 999"
+                                    maxlength="9">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="loanPurpose">Motivo del préstamo</label>
+                                <select id="loanPurpose" name="loanPurpose" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="capital-trabajo">Capital de trabajo</option>
+                                    <option value="construccion">Construcción</option>
+                                    <option value="consolidar-deudas">Consolidar deudas</option>
+                                    <option value="traslado-deuda">Traslado de deuda</option>
+                                    <option value="libre-disponibilidad">Libre disponibilidad</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="loanAmount">Monto del préstamo</label>
+                                <div class="input-with-currency">
+                                    <input type="text" id="loanAmount" name="loanAmount" placeholder="50,000.00"
+                                        required>
+                                    <select id="currency" name="currency" class="currency-select">
+                                        <option value="PEN">Soles</option>
+                                        <option value="USD">Dólares</option>
+                                    </select>
+                                </div>
+                                <small class="form-hint">Mín: S/ 15 mil - Máx: S/ 2 millones</small>
+                                <div class="interest-rate-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Tasa de interés mensual desde 0.84%</span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group radio-group section-tienes-propiedad">
+                                <label class="main-question">¿Tienes una propiedad (inmueble) que puedas dejar en
+                                    garantía? <span class="question-subtitle">Puede ser tuya o de tus
+                                        garantes.</span></label>
+                                <div class="radio-pill-container">
+                                    <label class="radio-pill">
+                                        <input type="radio" name="hasProperty" value="si" required checked>
+                                        <div class="radio-content">
+                                            <div class="radio-circle-custom"></div>
+                                            <span>Sí</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-pill">
+                                        <input type="radio" name="hasProperty" value="no">
+                                        <div class="radio-content">
+                                            <div class="radio-circle-custom"></div>
+                                            <span>No</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group terms-acceptance-wrapper">
+                                <label for="acceptTerms" class="terms-label">
+                                    <input type="checkbox" id="acceptTerms" name="acceptTerms" required
+                                        class="terms-checkbox">
+                                    <span class="terms-text">
+                                        Acepto los
+                                        <a href="terminos-y-condiciones.html" target="_blank" class="terms-link"
+                                            onclick="event.stopPropagation()">Términos y Condiciones</a>
+                                        y la
+                                        <a href="politica-de-privacidad.html" target="_blank" class="terms-link"
+                                            onclick="event.stopPropagation()">Política de Privacidad</a>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" onclick="window.history.back()">
+                                    <i class="fas fa-arrow-left"></i> Volver
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="nextStep()">
+                                    Siguiente <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PASO 2: Información de la Propiedad -->
+                        <div class="form-step" data-step="2">
+                            <p class="step-description">
+                                Para finalizar, completa los datos de la propiedad en garantía
+                            </p>
+
+                            <div class="form-group">
+                                <label>¿Cuál es el tipo de inmueble?</label>
+                                <div class="radio-grid">
+                                    <label class="radio-card">
+                                        <input type="radio" name="propertyType" value="casa" required>
+                                        <div class="radio-card-content">
+                                            <i class="fas fa-home"></i>
+                                            <span>Casa</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="propertyType" value="departamento">
+                                        <div class="radio-card-content">
+                                            <i class="fas fa-building"></i>
+                                            <span>Departamento</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="propertyType" value="terreno">
+                                        <div class="radio-card-content">
+                                            <i class="fas fa-map"></i>
+                                            <span>Terreno</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="propertyType" value="local">
+                                        <div class="radio-card-content">
+                                            <i class="fas fa-store"></i>
+                                            <span>Local</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="propertyType" value="edificio">
+                                        <div class="radio-card-content">
+                                            <i class="fas fa-city"></i>
+                                            <span>Edificio</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-card">
+                                        <input type="radio" name="propertyType" value="otro">
+                                        <div class="radio-card-content">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                            <span>Otro</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>¿La propiedad está inscrita en SUNARP?</label>
+                                <p class="field-help">Más información</p>
+                                <div class="radio-options-inline">
+                                    <label class="radio-label">
+                                        <input type="radio" name="sunarpRegistered" value="si" required>
+                                        <span>Sí</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="sunarpRegistered" value="no">
+                                        <span>No</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="sunarpRegistered" value="no-se">
+                                        <span>No sé</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>¿Cuál es la ubicación de tu inmueble?</label>
+                                <div class="form-row">
+                                    <select name="department" id="department" required>
+                                        <option value="">Departamento</option>
+                                        <!-- Se llenará dinámicamente con JavaScript -->
+                                    </select>
+                                    <select name="province" id="province" required>
+                                        <option value="">Provincia</option>
+                                        <!-- Se llenará dinámicamente con JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="district">Distrito</label>
+                                <select name="district" id="district" required>
+                                    <option value="">Selecciona un distrito</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Ingresa tu dirección (opcional)</label>
+                                <input type="text" id="address" name="address" placeholder="Ej: Av. Principal 123">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required-label">¿Cuál es el área de tu inmueble?</label>
+                                <input type="text" id="propertyArea" name="propertyArea" placeholder="m²" required>
+                                <small class="form-hint error-hint" style="display: none;">Este es un campo
+                                    requerido</small>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Ir al paso 1
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Enviar resultados <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PASO 3: Éxito / Resultado -->
+                        <div class="form-step" data-step="3" id="successStep">
+                            <div class="success-header-card">
+                                <div class="success-icon-container">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <h2>¡Felicidades! <br> Pre-calificas a un préstamo</h2>
+                            </div>
+
+                            <div class="success-content">
+                                <h3 class="next-steps-title">¿Y ahora qué sigue?</h3>
+
+                                <div class="agent-message-card">
+                                    <div class="agent-avatar">
+                                        <!-- Imagen de asesora placeholder -->
+                                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&auto=format&fit=crop"
+                                            alt="Asesora">
+                                    </div>
+                                    <p class="agent-text">
+                                        Ten tu celular a la mano. Durante el día, uno de nuestros asesores te llamará
+                                        desde el número <strong>(01) 480 0708</strong> para continuar con tu préstamo.
+                                    </p>
+                                </div>
+
+                                <div class="call-action-box">
+                                    <div class="call-icon">
+                                        <i class="fas fa-phone-volume"></i>
+                                    </div>
+                                    <p>Si tienes tu documentación completa, acelera tu proceso llamando al <strong>(01)
+                                            480 0708 - anexo 2</strong>.</p>
+                                </div>
+
+                                <div class="download-resource">
+                                    <i class="far fa-file-alt"></i>
+                                    <p>Descarga la guía del empresario <a href="#">aquí</a>.</p>
+                                </div>
+
+                                <!-- Accordion FAQ -->
+                                <div class="success-faq">
+                                    <div class="faq-item">
+                                        <button type="button" class="faq-toggle">
+                                            ¿El propietario del inmueble es el único que puede solicitar el préstamo?
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="faq-body">
+                                            <p>No, puede tratarse de personas distintas (familiares directos o socios)
+                                                pero es necesario que el dueño de la propiedad pueda firmar el préstamo
+                                                como garante.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <button type="button" class="faq-toggle">
+                                            ¿Cuánto tiempo toma para que me puedan desembolsar el préstamo?
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="faq-body">
+                                            <p>El proceso suele tomar entre 5 a 10 días hábiles una vez entregada toda
+                                                la documentación requerida.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <button type="button" class="faq-toggle">
+                                            ¿Qué requisitos debe cumplir mi propiedad?
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="faq-body">
+                                            <p>Debe estar inscrita en SUNARP, ubicada en Lima Metropolitana, Callao,
+                                                Arequipa o Trujillo, y libre de cargas judiciales graves.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <button type="button" class="faq-toggle">
+                                            ¿Cómo puedo saber si mi propiedad califica?
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="faq-body">
+                                            <p>Nuestros asesores realizarán una evaluación preliminar basada en la
+                                                ubicación y características de tu inmueble.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions center-action">
+                                    <a href="index.html" class="btn btn-primary btn-block">Ir a la página principal</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer style="margin-top: 4rem;">
+        <div class="container footer-content nav-container">
+            <p>&copy; 2024 Soluciones Ganadoras S.A.C. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="precalificacion.js"></script>
+
+</body>
+
+</html>
