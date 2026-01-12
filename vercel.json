@@ -1,4 +1,7 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false
+  "rewrites": [
+    { "source": "/financiamiento", "destination": "/financiamiento.html" },
+    { "source": "/inversiones", "destination": "/inversiones.html" },
+    { "source": "/precalificacion", "destination": "/precalificacion.html" }
+  ]
 }
