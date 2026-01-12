@@ -1,4 +1,9 @@
 {
+  "buildCommand": null,
+  "devCommand": null,
+  "installCommand": null,
+  "framework": null,
+  "outputDirectory": ".",
   "rewrites": [
     { "source": "/financiamiento", "destination": "/financiamiento.html" },
     { "source": "/inversiones", "destination": "/inversiones.html" },
