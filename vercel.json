@@ -1,12 +1,7 @@
 {
-  "buildCommand": null,
-  "devCommand": null,
-  "installCommand": null,
-  "framework": null,
-  "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/financiamiento", "destination": "/financiamiento.html" },
-    { "source": "/inversiones", "destination": "/inversiones.html" },
-    { "source": "/precalificacion", "destination": "/precalificacion.html" }
+  "routes": [
+    { "src": "/financiamiento", "dest": "/financiamiento.html" },
+    { "src": "/inversiones", "dest": "/inversiones.html" },
+    { "src": "/precalificacion", "dest": "/precalificacion.html" }
   ]
 }
