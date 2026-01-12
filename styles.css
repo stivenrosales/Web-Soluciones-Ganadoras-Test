@@ -2441,9 +2441,9 @@ textarea.contact-input {
     background: #E0F2FE;
 }
 
-.terms-label {
-    display: flex;
-    align-items: flex-start;
+.form-group .terms-label {
+    display: flex !important;
+    align-items: center;
     gap: 12px;
     cursor: pointer;
     user-select: none;
@@ -2455,7 +2455,7 @@ textarea.contact-input {
     width: 20px;
     height: 20px;
     min-width: 20px;
-    margin: 2px 0 0;
+    margin: 0;
     background: #FFF;
     border: 2px solid #CBD5E1;
     border-radius: 4px;
@@ -2489,7 +2489,7 @@ textarea.contact-input {
 .terms-text {
     flex: 1;
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.43;
     color: #475569;
 }
 
