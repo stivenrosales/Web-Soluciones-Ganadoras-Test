@@ -1,7 +1,3 @@
 {
-  "routes": [
-    { "src": "/financiamiento", "dest": "/financiamiento.html" },
-    { "src": "/inversiones", "dest": "/inversiones.html" },
-    { "src": "/precalificacion", "dest": "/precalificacion.html" }
-  ]
+  "cleanUrls": true
 }
