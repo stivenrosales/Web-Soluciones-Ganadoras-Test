@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir - Soluciones Ganadoras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray">
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logoSolucionGanadora.jpg" alt="Soluciones Ganadoras Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Financiamiento</a></li>
+                <li><a href="inversiones.html" class="active-link">Inversiones</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+            <!-- Botones eliminados -->
+        </div>
+    </nav>
+
+    <!-- Sección Principal Centrada -->
+    <section class="investment-hero">
+        <div class="container investment-centered">
+
+            <!-- Contenido Principal -->
+            <div class="investment-content text-center">
+                <h1>Invierte en <span class="highlight-text">préstamos con garantía hipotecaria</span></h1>
+                <p class="hero-subtitle mx-auto">Rentabiliza tu dinero con un inmueble inscrito en Sunarp como respaldo.
+                </p>
+
+                <ul class="check-list list-inline">
+                    <li><i class="fas fa-check"></i> Oportunidad de diversificar.</li>
+                    <li><i class="fas fa-check"></i> Garantía a nombre del inversionista.</li>
+                    <li><i class="fas fa-check"></i> Retorno de hasta <strong>28% anual</strong>.</li>
+                </ul>
+
+                <div class="hero-buttons justify-center">
+                    <button class="btn btn-lg btn-primary" onclick="openModal()">Simular una inversión</button>
+                    <button class="btn btn-lg btn-outline">Agendar una reunión</button>
+                </div>
+
+                <!-- Estadísticas Pequeñas -->
+                <div class="mini-stats justify-center">
+                    <div class="m-stat">
+                        <i class="fas fa-users"></i>
+                        <div><strong>+8000</strong><span>Inversionistas</span></div>
+                    </div>
+                    <div class="m-stat">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div><strong>+S/1600M</strong><span>Invertidos</span></div>
+                    </div>
+                    <div class="m-stat">
+                        <i class="fas fa-trophy"></i>
+                        <div><strong>8 años</strong><span>Operando</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL (Ventana Emergente) -->
+    <div id="investmentModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="simulator-card">
+                <div class="sim-header">
+                    <div class="sim-title">
+                        <i class="fas fa-calculator"></i>
+                        <span>Simula tu inversión</span>
+                    </div>
+                    <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+                </div>
+
+                <div class="sim-body">
+                    <h3 class="sim-rentability">Rentabilidad anual hasta <span class="percent">28%</span></h3>
+
+                    <!-- Input Monto -->
+                    <div class="form-group">
+                        <label>Monto total a invertir</label>
+                        <div class="input-with-select">
+                            <span class="currency-symbol" id="displaySymbol">S/</span>
+                            <input type="number" placeholder="0.00" id="montoInversion">
+                            <select class="currency-select" id="monedaSelect" onchange="updateCurrency()">
+                                <option value="PEN">Soles</option>
+                                <option value="USD">Dólares</option>
+                            </select>
+                        </div>
+                        <small class="helper-text" id="montoHelper">Monto a partir de S/ 18,000</small>
+                        <small class="error-text" id="montoError"
+                            style="display:none; color: #ef4444; font-size: 0.8rem; margin-top: 4px;">
+                            <i class="fas fa-exclamation-circle"></i> El monto mínimo es <span id="minAmountTxt">S/
+                                18,000</span>
+                        </small>
+                    </div>
+
+                    <div class="columns-2">
+                        <!-- Select Periodo -->
+                        <div class="form-group">
+                            <label>Periodo</label>
+                            <select class="form-select" id="periodoSelect" onchange="calculateInvestment()">
+                                <option value="12">12 meses</option>
+                                <option value="24">24 meses</option>
+                                <option value="36" selected>36 meses</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Riesgo -->
+                        <div class="form-group">
+                            <label>Riesgo <i class="fas fa-info-circle info-icon"></i></label>
+                            <select class="form-select" id="riesgoSelect" onchange="calculateInvestment()">
+                                <option value="bajo">Bajo</option>
+                                <option value="medio" selected>Medio</option>
+                                <option value="alto">Alto</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- CAJA DE RESULTADOS (Nueva) -->
+                    <div class="result-box" id="resultBox" style="display:none;">
+                        <div class="result-header">
+                            <p class="result-intro">
+                                Invirtiendo <strong id="resMontoInv">S/ 0.00</strong> con un riesgo <strong
+                                    id="resRiesgoTxt">Medio</strong>, podrías recibir:
+                            </p>
+                            <div class="result-big-number" id="resTotalRecibir">S/ 0.00</div>
+                        </div>
+
+                        <div class="result-details-container">
+                            <div class="result-details">
+                                <div class="res-item">
+                                    <span>Ganancia</span>
+                                    <strong id="resGanancia">S/ 0.00</strong>
+                                </div>
+                                <div class="res-item">
+                                    <span>Periodo</span>
+                                    <strong id="resPeriodo">36 meses</strong>
+                                </div>
+                                <div class="res-item">
+                                    <span>Mensual <i class="fas fa-info-circle"></i></span>
+                                    <strong id="resMensual">S/ 0.00</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estado Vacío / Error -->
+                    <div id="emptyState"
+                        style="text-align: center; color: #6B7280; padding: 20px; font-size: 0.9rem; background: #F9FAFB; border-radius: 12px; margin: 20px 0;">
+                        <i class="fas fa-info-circle"
+                            style="font-size: 1.5rem; margin-bottom: 10px; color: #9CA3AF;"></i>
+                        <p>Ingresa un monto válido para ver la proyección.</p>
+                    </div>
+
+                    <div class="sim-footer-text">
+                        <p>Entérate de todas las oportunidades en nuestro canal de <a href="#">Telegram</a>.</p>
+                    </div>
+
+                    <div class="sim-actions">
+                        <button class="btn btn-outline full-width" onclick="closeModal()">Cancelar</button>
+                        <button class="btn btn-primary full-width">Invertir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content nav-container">
+            <p>&copy; 2024 Soluciones Ganadoras. Todos los derechos reservados.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('investmentModal');
+        const inputMonto = document.getElementById('montoInversion');
+        const selectPeriodo = document.getElementById('periodoSelect');
+        const selectRiesgo = document.getElementById('riesgoSelect');
+        const selectMoneda = document.getElementById('monedaSelect');
+
+        const helperText = document.getElementById('montoHelper');
+        const errorText = document.getElementById('montoError');
+        const minAmountTxt = document.getElementById('minAmountTxt');
+
+        const resultBox = document.getElementById('resultBox');
+        const emptyState = document.getElementById('emptyState');
+        const displaySymbol = document.getElementById('displaySymbol');
+
+        // Escuchar cambios
+        if (inputMonto) inputMonto.addEventListener('input', calculateInvestment);
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Valor por defecto si estÃ¡ vacÃ­o
+            if (!inputMonto.value) {
+                inputMonto.value = selectMoneda && selectMoneda.value === 'PEN' ? 18000 : 5000;
+            }
+            if (selectMoneda) updateCurrency(); // Inicializar textos correctos
+            else calculateInvestment();
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        function updateCurrency() {
+            if (!selectMoneda) return;
+            const currency = selectMoneda.value;
+
+            if (currency === 'PEN') {
+                if (displaySymbol) displaySymbol.textContent = 'S/';
+                if (helperText) helperText.textContent = 'Monto a partir de S/ 18,000';
+                if (minAmountTxt) minAmountTxt.textContent = 'S/ 18,000';
+            } else {
+                if (displaySymbol) displaySymbol.textContent = '$';
+                if (helperText) helperText.textContent = 'Monto a partir de $ 5,000';
+                if (minAmountTxt) minAmountTxt.textContent = '$ 5,000';
+            }
+            calculateInvestment();
+        }
+
+        // Lógica Financiera
+        function calculateInvestment() {
+            // 1. Obtener valores
+            let monto = parseFloat(inputMonto.value);
+            const meses = parseInt(selectPeriodo.value);
+            const riesgo = selectRiesgo.value; // bajo, medio, alto
+            const currency = selectMoneda ? selectMoneda.value : 'PEN';
+
+            // 2. Validación de Mínimos
+            let minAmount = currency === 'PEN' ? 18000 : 5000;
+
+            if (!monto || monto < minAmount) {
+                // Mostrar Error / Estado Vacío
+                if (resultBox) resultBox.style.display = 'none';
+                if (emptyState) emptyState.style.display = 'block';
+
+                if (monto > 0) {
+                    if (errorText) errorText.style.display = 'block';
+                    if (emptyState) emptyState.style.display = 'none'; // Ocultar info si hay error
+                } else {
+                    if (errorText) errorText.style.display = 'none';
+                }
+                return;
+            }
+
+            // Si pasa validación
+            if (errorText) errorText.style.display = 'none';
+            if (resultBox) resultBox.style.display = 'block';
+            if (emptyState) emptyState.style.display = 'none';
+
+            // 3. Tasa Anual
+            let tasaAnual = 0.18; // Default Bajo
+            if (riesgo === 'medio') tasaAnual = 0.22;
+            if (riesgo === 'alto') tasaAnual = 0.28;
+
+            // 4. Cálculos
+            const tasaMensual = tasaAnual / 12;
+            let cuota = monto * (tasaMensual * Math.pow(1 + tasaMensual, meses)) / (Math.pow(1 + tasaMensual, meses) - 1);
+
+            const totalRecibido = cuota * meses;
+            const ganancia = totalRecibido - monto;
+
+            // 5. Formato de Moneda
+            const locale = currency === 'PEN' ? 'es-PE' : 'en-US';
+            const currCode = currency;
+
+            const formatter = new Intl.NumberFormat(locale, { style: 'currency', currency: currCode });
+
+            document.getElementById('resMontoInv').innerText = formatter.format(monto);
+            document.getElementById('resRiesgoTxt').innerText = riesgo.charAt(0).toUpperCase() + riesgo.slice(1);
+
+            document.getElementById('resTotalRecibir').innerText = formatter.format(totalRecibido);
+            document.getElementById('resGanancia').innerText = formatter.format(ganancia);
+            document.getElementById('resPeriodo').innerText = meses + ' meses';
+            document.getElementById('resMensual').innerText = formatter.format(cuota);
+        }
+    </script>
+
+</body>
+
+</html>
